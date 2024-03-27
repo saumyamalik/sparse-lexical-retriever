@@ -1,0 +1,43 @@
+[04/27/2023 16:13:57] {bm25.py:69} INFO - Start training
+[04/27/2023 16:13:58] {bm25.py:74} INFO - Data loading
+[04/27/2023 16:13:58] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/27/2023 16:16:31] {bm25.py:69} INFO - Start training
+[04/27/2023 16:16:31] {bm25.py:74} INFO - Data loading
+[04/27/2023 16:16:48] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/27/2023 16:16:48] {bm25.py:116} INFO - Start epoch 1
+[04/27/2023 16:21:54] {bm25.py:69} INFO - Start training
+[04/27/2023 16:21:54] {bm25.py:74} INFO - Data loading
+[04/27/2023 16:21:54] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/27/2023 16:21:54] {bm25.py:115} INFO - Start epoch 1
+[04/27/2023 19:25:51] {bm25.py:69} INFO - Start training
+[04/27/2023 19:25:51] {bm25.py:74} INFO - Data loading
+[04/27/2023 19:26:08] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/27/2023 19:26:08] {bm25.py:115} INFO - Start epoch 1
+[04/27/2023 19:27:01] {bm25.py:69} INFO - Start training
+[04/27/2023 19:27:02] {bm25.py:74} INFO - Data loading
+[04/27/2023 19:27:02] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/27/2023 19:27:02] {bm25.py:115} INFO - Start epoch 1
+[04/27/2023 23:10:28] {bm25.py:69} INFO - Start training
+[04/27/2023 23:10:29] {bm25.py:74} INFO - Data loading
+[04/27/2023 23:10:45] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/27/2023 23:10:45] {bm25.py:115} INFO - Start epoch 1
+[04/28/2023 00:43:34] {bm25.py:69} INFO - Start training
+[04/28/2023 00:43:34] {bm25.py:74} INFO - Data loading
+[04/28/2023 00:43:51] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/28/2023 00:43:51] {bm25.py:115} INFO - Start epoch 1
+[04/28/2023 00:50:46] {bm25.py:69} INFO - Start training
+[04/28/2023 00:50:46] {bm25.py:74} INFO - Data loading
+[04/28/2023 00:50:46] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/28/2023 00:50:46] {bm25.py:115} INFO - Start epoch 1
+[04/28/2023 00:56:41] {bm25.py:69} INFO - Start training
+[04/28/2023 00:56:41] {bm25.py:74} INFO - Data loading
+[04/28/2023 00:56:42] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/28/2023 00:56:42] {bm25.py:115} INFO - Start epoch 1
+[04/28/2023 01:03:10] {bm25.py:69} INFO - Start training
+[04/28/2023 01:03:10] {bm25.py:74} INFO - Data loading
+[04/28/2023 01:03:10] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/28/2023 01:03:11] {bm25.py:115} INFO - Start epoch 1
+[04/28/2023 01:20:13] {bm25.py:69} INFO - Start training
+[04/28/2023 01:20:13] {bm25.py:74} INFO - Data loading
+[04/28/2023 01:20:14] {bm25.py:83} WARNING - Data loading finished for rank 0
+[04/28/2023 01:20:20] {bm25.py:115} INFO - Start epoch 1

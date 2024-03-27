@@ -70,17 +70,6 @@ def train(opt, model, optimizer, scheduler, step):
     train_dataset = data.load_data(opt, tokenizer)
     logger.warning(f"Data loading finished for rank {dist_utils.get_rank()}")
 
-    # train_sampler = RandomSampler(train_dataset)
-    # train_dataloader = DataLoader(
-    #     train_dataset,
-    #     sampler=train_sampler,
-    #     batch_size=opt.batch_size,
-    #     drop_last=True,
-    #     num_workers=opt.num_workers,
-    #     collate_fn=collator,
-    #     pin_memory=True,
-    # )
-
     epoch = 1
 
     model.train()
@@ -148,7 +137,6 @@ def train(opt, model, optimizer, scheduler, step):
 
             loss.backward()
             optimizer.step()
-            #print(loss)
             
             losses.append(loss.item())
             
@@ -158,9 +146,6 @@ def train(opt, model, optimizer, scheduler, step):
             scheduler.step()
             model.zero_grad()
             optimizer.zero_grad()
-
-
-            #run_stats.update(iter_stats)
 
             if step % 10 == 0:
                 log = f"{step} / {opt.total_steps}"
@@ -172,25 +157,8 @@ def train(opt, model, optimizer, scheduler, step):
                 log += f" | Memory: {torch.cuda.max_memory_allocated()//1e9} GiB"
                 log += f" | loss: {loss.item()}"
                 log+= f" | accuracy: {acc}"
-
-                
-
                 logger.info(log)
                 run_stats.reset()
-
-            # if step % opt.eval_freq == 0:
-            #     if isinstance(model, torch.nn.parallel.DistributedDataParallel):
-            #         encoder = model.module.get_encoder()
-            #     else:
-            #         encoder = model.get_encoder()
-            #     eval_model(
-            #         opt, query_encoder=encoder, doc_encoder=encoder, tokenizer=tokenizer, tb_logger=tb_logger, step=step
-            #     )
-
-            #     if dist_utils.is_main():
-            #         utils.save(model, optimizer, scheduler, step, opt, opt.output_dir, f"lastlog")
-
-            #     model.train()
 
             if step == 1 or step % 160 == 0 or i == len(train_dataloader) - 1:
                 utils.save(model, optimizer, scheduler, step, opt, opt.folder_name, f"step-{step}")

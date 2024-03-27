@@ -119,23 +119,7 @@ def train(opt, model, optimizer, scheduler, step):
             step += 1
 
             batch = {key: value.cuda() if isinstance(value, torch.Tensor) else value for key, value in batch.items()}
-            
-            # train_loss, iter_stats = model(**batch, stats_prefix="train")
-
-            # TODO: figure out what to do with batch to separate into query, document
-            # convert docs, queries into tensors
-            
-            # VECTORIZE EDIT: COMMENTING THESE OUT
-            # docs = torch.tensor(opt.batch_size, vocab_size, dtype=torch.int64, device=device)
-            # queries = torch.zeros(opt.batch_size, vocab_size, dtype=torch.int64, device=device)
-               # EDIT COMMENTING THIS OUT
-            # for i, doc in enumerate(batch["k_tokens"]):
-            #     doc_onehot = F.one_hot(doc, vocab_size).sum(0)
-            #     docs[i] = doc_onehot
-            #     query_one_hot = F.one_hot(batch["q_tokens"][i], vocab_size).max(0)[0]
-            #     queries[i] = query_one_hot
-            
-            
+                        
             docs_ids = batch['k_tokens']
             queries_ids = batch['q_tokens']
 
@@ -157,7 +141,6 @@ def train(opt, model, optimizer, scheduler, step):
             logits = model(queries, docs)
             
             train_labels = torch.arange(0,opt.batch_size).cuda()
-            # TODO: check dimensions here
             loss = F.cross_entropy(logits, train_labels) + F.cross_entropy(torch.t(logits), train_labels)
             predictions = logits.max(1)
             correct = torch.where(predictions[1]==train_labels, 1, 0)

@@ -21,7 +21,6 @@ from transformers import AutoTokenizer, OPTModel
 import torch.nn as nn
 import torch.nn.functional as F
 
-# I'm saumya and I made this file 
 logger = logging.getLogger(__name__)
 
 def load_model(model_name_or_path, step_path):
@@ -99,14 +98,7 @@ class DocEncoder(nn.Module):
             encoded = torch.divide(doc_features, denom)
 
         return encoded
-
-        
-
-# class DocEncoder()
-    # init(model)
-    # forward - does encoding
   
-# This code was all me go me!!!
 def load_retriever(model_name_or_path, step_path, isBM25=False):
     tokenizer = AutoTokenizer.from_pretrained("facebook/opt-125m")
     if isBM25:
@@ -125,10 +117,8 @@ def load_retriever(model_name_or_path, step_path, isBM25=False):
     doc_encoder = DocEncoder(nonlinearity, tokenizer, isBM25)
     
     return tokenizer, query_encoder, doc_encoder
-    # retriever = LexicalRetriever(model)
     
     
-    # model you pass to eval will need to have a  s
     
     
     
